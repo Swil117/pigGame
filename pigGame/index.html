@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pigStyle.css" />
+    <title>Pig Game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>  
+</head>
+
+<body>
+ 
+	<table class="gameBoard winningScore">
+		<tr>
+			<div class="player active live" id="player-1-panel">
+				<div class="player-name" id="player-1"></div>
+				<div class="player-score" id="score-0">0</div>
+				<div class="player-current-box">
+					<div class="player-current-label">Current</div>
+					<div class="player-current-score" id="current-0">0</div>
+				</div>
+			</div>
+		</tr>
+		<tr>
+			<div class="player live" id="player-2-panel">
+				<div class="player-name" id="player-2"></div>
+				<div class="player-score" id="score-1">0</div>
+				<div class="player-current-box">
+					<div class="player-current-label">Current</div>
+					<div class="player-current-score" id="current-1">0</div>
+				</div>
+			</div>
+		</tr>
+		<tr>
+			<div class="player" id="player-3-panel">
+				<div id="player-3" class="player-name"></div>
+				<div class="joinBtn"> 
+					<button id="activeBtnP3" class="activeBtn" type="button" onclick="setActive()">Join</button>
+				</div>
+				<div class="player-score" id="score-2">0</div>
+				<div class="player-current-box">  
+					<div class="player-current-label">Current</div>
+					<div class="player-current-score" id="current-2">0</div>
+				</div>
+			</div>
+		</tr>
+		<tr>
+			<div class="player" id="player-4-panel">
+				<div id="player-4" class="player-name" ></div>
+				<div class="joinBtn"> 
+					<button id="activeBtnP4" class="activeBtn" type="button" onclick="setActive()">Join</button>
+				</div>
+				<div class="player-score" id="score-3">0</div>
+				<div class="player-current-box">
+					<div class="player-current-label">Current</div>
+					<div class="player-current-score" id="current-3">0</div> 
+				</div>
+			</div>
+		</tr>
+		<tr>
+			<div class="player" id="player-5-panel">
+				<div id="player-5" class="player-name" ></div>
+				<div class="joinBtn"> 
+					<button id="activeBtnP5" class="activeBtn" type="button" onclick="setActive()">Join</button>
+				</div>
+				<div class="player-score" id="score-4">0</div>
+				<div class="player-current-box">
+					<div class="player-current-label">Current</div>
+					<div class="player-current-score" id="current-4">0</div>
+				</div>  
+			</div> 
+		</tr>
+		<tr>
+			<div class="player" id="player-6-panel">
+				<div id="player-6" class="player-name" ></div>
+				<div class="joinBtn"> 
+					<button id="activeBtnP6" class="activeBtn" type="button" onclick="setActive()">Join</button>
+				</div>
+				<div class="player-score" id="score-5">0</div>
+				<div class="player-current-box">
+					<div class="player-current-label">Current</div>
+					<div class="player-current-score" id="current-5">0</div>
+				</div>
+			</div>
+		</tr>
+	</table>
+<div>
+  <button class="btn-new" onclick="startGame()"><i class="ion-ios-plus-outline"></i>Start game</button>
+  <button class="btn-roll" onclick="rollDice()"><i class="ion-ios-loop"></i>Roll dice</button>
+  <button class="btn-hold" onclick="holdScore()"><i class="ion-ios-download-outline"></i>Hold</button>
+  <img src="assets/dice-1.svg" alt="Dice" class="dice">
+  <img src="assets/dice-1.svg" alt="Dice" class="dice2">
+</div>
+  
+  </body>
+  <script src="pig.js"></script>
+  <script src="game.js"></script>
+</html>
