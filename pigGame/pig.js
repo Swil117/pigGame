@@ -19,16 +19,18 @@ function rollDice() {
 
     diceDOM.src ="assets/dice-" + dice + ".svg";
     diceDOM2.src = "assets/dice-" + dice2 + ".svg";
-
+    //if either dice do not = 1 continue
     if (dice !== 1 && dice2 !== 1) {
       roundScore += dice + dice2;
       $(".active").find(".player-current-score").text(roundScore);
     } 
+    //if both dice = 1 reset ooverall score of player
     else if (dice == 1 && dice2 == 1) {
       $(".active").find(".player-score").text(0);
       $('.player-current-score').html("0");
       nextPlayer();
     }
+    //if the dice lands on 1 move to next player
     else {
       $('.player-current-score').html("0");
       nextPlayer();
@@ -44,6 +46,7 @@ function holdScore() {
     $(".active").find(".player-score").text(scores[$(".active").attr("id")]);
     var winningScore = 100;
     $('.player-current-score').html("0");
+    //set winner if score is exactly 100
     if (scores[$(".active").attr("id")] === winningScore) {
       $(".active").find(".player-name").text("Winner!");
       document.querySelector(".dice").style.display = "none";
@@ -52,7 +55,9 @@ function holdScore() {
       $(".active").addClass("winner");
       $(".active").removeClass("active");
       gamePlaying = false;
-    } else {
+    } 
+    //if player presses hold, move to next player
+    else {
       $('.player-current-score').html("0");
       nextPlayer();
     }
@@ -71,7 +76,7 @@ function nextPlayer() {
 };
 
 document.querySelector(".btn-new").addEventListener("click", init);
-
+//set up
 function init() {
  winningScore = 100;
 
@@ -123,7 +128,7 @@ function init() {
   document.querySelector("#player-1-panel").classList.add("active");
 
 };
-
+//let other players join by adding the class .live
 function setActive()
 { 
   if($('#activeBtnP3').live("click", function() {
